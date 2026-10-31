@@ -1,17 +1,14 @@
-'use client';
+export default function PageRunner({ page, className = 'is-loading', controller, html }) {
+  const scriptContent = `
+    document.body.className = ${JSON.stringify(className)};
+    ${page ? `document.body.dataset.page = ${JSON.stringify(page)};` : `delete document.body.dataset.page;`}
+    ${controller ? `document.body.dataset.controller = ${JSON.stringify(controller)};` : `delete document.body.dataset.controller;`}
+  `;
 
-import { useEffect } from 'react';
-
-export default function PageRunner({ page, className = 'is-loading', html }) {
-  useEffect(() => {
-    document.body.className = className;
-    document.body.dataset.page = page;
-
-    // Dispatch DOMContentLoaded or load if scripts are already present
-    if (window.ScrollTrigger) {
-      window.ScrollTrigger.refresh();
-    }
-  }, [page, className]);
-
-  return <div dangerouslySetInnerHTML={{ __html: html }} />;
+  return (
+    <>
+      <script dangerouslySetInnerHTML={{ __html: scriptContent }} />
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+    </>
+  );
 }

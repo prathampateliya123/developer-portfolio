@@ -8,10 +8,14 @@ export const metadata = {
 
 export default function LoginPage() {
   return (
-    <PageRunner
-      page="login"
-      className="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased"
-      html={loginHtml}
-    />
+    <>
+      <link rel="stylesheet" href="/build/474.e533684e.css" />
+      <link rel="stylesheet" href="/build/app.e7b0cd23.css" />
+      <PageRunner
+        className="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased"
+        controller="core--keyboard"
+        html={loginHtml}
+      />
+    </>
   );
 }
