@@ -27,12 +27,6 @@ export const projectsData = {
       "API Platform 4.3",
       "PostgreSQL 16",
       "Mercure",
-      "Angular / Ionic",
-      "Symfony 7.4",
-      "PHP 8.5",
-      "API Platform 4.3",
-      "PostgreSQL 16",
-      "Mercure",
       "Angular / Ionic"
     ],
     "stats": [
@@ -266,12 +260,6 @@ export const projectsData = {
       "PHPStan level 8"
     ],
     "stack": [
-      "Symfony 7.4",
-      "PHP 8.5",
-      "API Platform 4",
-      "PostgreSQL 16",
-      "Mercure",
-      "Angular / Ionic",
       "Symfony 7.4",
       "PHP 8.5",
       "API Platform 4",
@@ -579,12 +567,6 @@ export const projectsData = {
       "Node.js 24",
       "API Platform 5",
       "MariaDB 11.8",
-      "Mercure",
-      "Symfony 7.4",
-      "PHP 8.5",
-      "Node.js 24",
-      "API Platform 5",
-      "MariaDB 11.8",
       "Mercure"
     ],
     "stats": [
@@ -820,14 +802,6 @@ export const projectsData = {
       "PHPStan level 8"
     ],
     "stack": [
-      "Symfony 7.4",
-      "PHP 8.5",
-      "API Platform 5",
-      "WordPress 7.1",
-      "Node.js 22",
-      "Playwright",
-      "MariaDB 11.8",
-      "Mercure",
       "Symfony 7.4",
       "PHP 8.5",
       "API Platform 5",
@@ -1082,14 +1056,6 @@ export const projectsData = {
       "MariaDB 11.8",
       "Mercure",
       "Stimulus",
-      "FR / EN",
-      "Symfony 7.4",
-      "PHP 8.5",
-      "API Platform 5",
-      "Doctrine ORM 3",
-      "MariaDB 11.8",
-      "Mercure",
-      "Stimulus",
       "FR / EN"
     ],
     "stats": [
@@ -1328,10 +1294,6 @@ export const projectsData = {
       "Symfony",
       "PHP",
       "Doctrine",
-      "FR / EN",
-      "Symfony",
-      "PHP",
-      "Doctrine",
       "FR / EN"
     ],
     "stats": [],
@@ -1401,11 +1363,6 @@ export const projectsData = {
       "W3C valid"
     ],
     "stack": [
-      "GSAP",
-      "SCSS",
-      "ES modules",
-      "esbuild",
-      "PHP",
       "GSAP",
       "SCSS",
       "ES modules",
@@ -1622,11 +1579,6 @@ export const projectsData = {
       "PHPStan level 8"
     ],
     "stack": [
-      "Symfony 7.4",
-      "PHP 8.5",
-      "API Platform",
-      "Mercure",
-      "JWT",
       "Symfony 7.4",
       "PHP 8.5",
       "API Platform",
@@ -1969,9 +1921,6 @@ export const projectsData = {
     "stack": [
       "GSAP",
       "SCSS",
-      "Integration",
-      "GSAP",
-      "SCSS",
       "Integration"
     ],
     "stats": [],
@@ -2045,12 +1994,6 @@ export const projectsData = {
       "1,154 PHP tests"
     ],
     "stack": [
-      "Symfony 6.4",
-      "PHP 8.3",
-      "API Platform",
-      "Angular 18",
-      "Elasticsearch",
-      "Mercure",
       "Symfony 6.4",
       "PHP 8.3",
       "API Platform",
@@ -2375,9 +2318,6 @@ export const projectsData = {
     "stack": [
       "PHP",
       "Webservices",
-      "Backoffice",
-      "PHP",
-      "Webservices",
       "Backoffice"
     ],
     "stats": [],
@@ -2448,8 +2388,6 @@ export const projectsData = {
       "Responsive"
     ],
     "stack": [
-      "TYPO3",
-      "EN / DE",
       "TYPO3",
       "EN / DE"
     ],
@@ -2524,12 +2462,6 @@ export const projectsData = {
       "W3C valid"
     ],
     "stack": [
-      "SCSS",
-      "Dart Sass 1.106",
-      "TypeScript 7.0",
-      "esbuild",
-      "Vitest",
-      "Biome",
       "SCSS",
       "Dart Sass 1.106",
       "TypeScript 7.0",
