@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { ArrowRight, Mail } from 'lucide-react';
 
 export default function FinaleCTA() {
@@ -28,13 +29,13 @@ export default function FinaleCTA() {
 
         {/* Actions */}
         <div className="flex flex-col sm:flex-row items-center gap-4">
-          <a
-            href="mailto:admin@devinthehood.com?subject=New%20Project%20Inquiry"
+          <Link
+            href="/contact"
             className="flex items-center gap-3 px-8 py-4 bg-red hover:bg-red-ink text-white rounded-full font-mono text-xs uppercase tracking-mono font-bold shadow-2xl hover:scale-105 transition-all"
           >
             <span>Start a project</span>
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
 
           <a
             href="mailto:admin@devinthehood.com"

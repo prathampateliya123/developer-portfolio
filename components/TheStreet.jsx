@@ -2,125 +2,126 @@
 
 import { useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
 
 const projects = [
   {
     id: '01',
+    slug: 'cegeta',
     name: 'Cegeta',
     category: 'SaaS platform',
     year: '2026',
-    theme: 'border-ink bg-bg-2',
     awning: 'bg-ink text-bg',
     image: '/images/cegeta-home.jpg',
   },
   {
     id: '02',
+    slug: 'cereezer',
     name: 'Cereezer',
     category: 'SaaS platform',
     year: '2026',
-    theme: 'border-red bg-rose/10',
     awning: 'bg-red text-white',
     image: '/images/cereezer-home.jpg',
   },
   {
     id: '03',
+    slug: 'tradebot',
     name: 'Tradebot',
     category: 'Full-stack',
     year: '2026',
-    theme: 'border-ink-2 bg-bg-3',
     awning: 'bg-ink-2 text-white',
     image: '/images/tradebot-home.jpg',
   },
   {
     id: '04',
+    slug: 'tessera',
     name: 'Tessera',
     category: 'Full-stack',
     year: '2026',
-    theme: 'border-[#9e3a2f] bg-[#fbf5f2]',
     awning: 'bg-[#9e3a2f] text-white',
     image: '/images/tessera-home.jpg',
   },
   {
     id: '05',
+    slug: 'devingame',
     name: 'DEV IN GAME',
     category: 'Full-stack',
     year: '2026',
-    theme: 'border-ink bg-bg-2',
     awning: 'bg-ink text-bg',
     image: '/images/devingame-home.jpg',
   },
   {
     id: '06',
+    slug: 'dev-in-live',
     name: 'DEV IN LIVE',
     category: 'Full-stack',
     year: '2026',
-    theme: 'border-red bg-rose/10',
     awning: 'bg-red text-white',
     image: '/images/devinlive-home.jpg',
   },
   {
     id: '07',
+    slug: 'devinthehood',
     name: 'DEV IN THE HOOD',
     category: 'Design',
     year: '2019',
-    theme: 'border-ink-2 bg-bg-3',
     awning: 'bg-ink-2 text-white',
     image: '/images/devinthehood-cover.jpg',
     awwwards: true,
   },
   {
     id: '08',
+    slug: 'superp',
     name: 'SupERP',
     category: 'SaaS platform',
     year: '2026',
-    theme: 'border-[#9e3a2f] bg-[#fbf5f2]',
     awning: 'bg-[#9e3a2f] text-white',
     image: '/images/superp-dashboard.jpg',
   },
   {
     id: '09',
+    slug: 'letz-kola',
     name: "Lët'z Kola",
     category: 'Design',
     year: '2022',
-    theme: 'border-ink bg-bg-2',
     awning: 'bg-ink text-bg',
     image: '/images/letz-intro.jpg',
     awwwards: true,
   },
   {
     id: '10',
+    slug: 'provencale-webshop',
     name: 'Webshop Provençale',
     category: 'Full-stack',
     year: '2021',
-    theme: 'border-red bg-rose/10',
     awning: 'bg-red text-white',
     image: '/images/webshop-home.jpg',
   },
   {
     id: '11',
+    slug: 'enoprimes',
     name: 'Enoprimes simulator',
     category: 'Full-stack',
     year: '2020',
-    theme: 'border-ink-2 bg-bg-3',
     awning: 'bg-ink-2 text-white',
     image: '/images/enoprimes1.jpg',
   },
   {
     id: '12',
+    slug: 'sms-group',
     name: 'SMS group',
     category: 'Front-end',
     year: '2019',
-    theme: 'border-[#9e3a2f] bg-[#fbf5f2]',
     awning: 'bg-[#9e3a2f] text-white',
     image: '/images/sms-home.jpg',
   },
   {
     id: '13',
+    slug: 'iroom',
     name: 'iRoom',
     category: 'Front-end',
     year: '2017',
-    theme: 'border-ink bg-bg-2',
     awning: 'bg-ink text-bg',
     image: '/images/iroom-home.jpg',
   },
@@ -137,7 +138,7 @@ export default function TheStreet() {
   };
 
   return (
-    <section id="work" className="py-24 bg-bg border-t border-b border-ink/10 relative overflow-hidden">
+    <section id="the-street" className="py-24 bg-bg border-t border-b border-ink/10 relative overflow-hidden">
       {/* Header */}
       <div className="max-w-[1680px] mx-auto px-6 md:px-12 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
@@ -194,7 +195,10 @@ export default function TheStreet() {
             </div>
 
             {/* Store Showcase Box */}
-            <div className="relative border-2 border-t-0 border-ink/20 rounded-b-lg overflow-hidden bg-white shadow-xl flex flex-col">
+            <Link
+              href={`/work/${p.slug}`}
+              className="relative border-2 border-t-0 border-ink/20 rounded-b-lg overflow-hidden bg-white shadow-xl flex flex-col"
+            >
               <div className="relative h-56 sm:h-64 w-full bg-bg-3 overflow-hidden">
                 <Image
                   src={p.image}
@@ -222,7 +226,7 @@ export default function TheStreet() {
                   Explore <ExternalLink className="w-3.5 h-3.5" />
                 </span>
               </div>
-            </div>
+            </Link>
           </div>
         ))}
 
@@ -230,15 +234,14 @@ export default function TheStreet() {
         <div className="flex-shrink-0 w-64 flex flex-col justify-center items-center p-8 bg-bg-2 border-2 border-dashed border-ink/20 rounded-lg text-center">
           <span className="font-mono text-xs uppercase tracking-mono text-ink-3 mb-2">13 Case Studies</span>
           <h3 className="text-xl font-bold uppercase text-ink mb-4">Crafted & Shipped</h3>
-          <a
-            href="#both-sides"
+          <Link
+            href="/work"
             className="px-5 py-2.5 bg-ink text-white rounded-full font-mono text-xs uppercase tracking-mono hover:bg-red transition-colors"
           >
-            Start Next
-          </a>
+            All Projects →
+          </Link>
         </div>
       </div>
     </section>
   );
 }
-

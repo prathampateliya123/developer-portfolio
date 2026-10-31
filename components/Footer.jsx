@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUp } from 'lucide-react';
 
@@ -109,7 +110,12 @@ export default function Footer() {
 
         {/* Bottom Tier */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs uppercase tracking-mono text-ink-3">
-          <p>© 2026 dev in the hood · Jul6art</p>
+          <p>
+            <Link href="/login" className="hover:text-ink transition-colors mr-2">
+              © 2026 dev in the hood
+            </Link>
+            · Jul6art — Lead developer
+          </p>
 
           <button
             type="button"

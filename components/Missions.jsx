@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ChevronRight, ArrowRight } from 'lucide-react';
 
 const missionData = [
@@ -179,13 +180,13 @@ export default function Missions() {
             </div>
 
             {/* CTA */}
-            <a
-              href={`mailto:admin@devinthehood.com?subject=Project Inquiry: ${active.title}`}
+            <Link
+              href={`/contact?mission=${encodeURIComponent(active.title)}`}
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-red hover:bg-red-ink text-white rounded-full font-mono text-xs uppercase tracking-mono font-bold transition-colors shadow-lg"
             >
               <span>Choose this mission</span>
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

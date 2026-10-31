@@ -2,11 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [time, setTime] = useState('--:--');
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const updateTime = () => {
@@ -38,10 +41,9 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { label: 'Index', href: '#two-sides', number: '01' },
-    { label: 'Work', href: '#the-street', number: '02' },
-    { label: 'Factory', href: '#the-factory', number: '03' },
-    { label: 'Contact', href: '#both-sides', number: '04' },
+    { label: 'Index', href: '/', number: '01' },
+    { label: 'Work', href: '/work', number: '02' },
+    { label: 'Contact', href: '/contact', number: '03' },
   ];
 
   return (
@@ -55,8 +57,8 @@ export default function Header() {
       >
         <div className="max-w-[1680px] mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Brand Logo */}
-          <a
-            href="#two-sides"
+          <Link
+            href="/"
             className="flex items-center gap-3.5 group cursor-pointer"
             aria-label="DEV IN THE HOOD — home"
           >
@@ -83,19 +85,26 @@ export default function Header() {
                 priority
               />
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 font-mono text-xs uppercase tracking-mono">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-ink-2 hover:text-red transition-colors duration-200 py-1 border-b-2 border-transparent hover:border-red"
-              >
-                {item.label}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`transition-colors duration-200 py-1 border-b-2 ${
+                    isActive
+                      ? 'text-red border-red font-bold'
+                      : 'text-ink-2 hover:text-red border-transparent hover:border-red'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Meta Time & Status */}
@@ -145,14 +154,14 @@ export default function Header() {
           <ul className="flex flex-col gap-6">
             {navItems.map((item) => (
               <li key={item.label}>
-                <a
+                <Link
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
                   className="flex items-baseline gap-4 text-3xl font-black uppercase tracking-tight text-ink hover:text-red transition-colors"
                 >
                   <span className="font-mono text-sm text-ink-3 font-normal">{item.number}</span>
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -178,4 +187,3 @@ export default function Header() {
     </>
   );
 }
-
