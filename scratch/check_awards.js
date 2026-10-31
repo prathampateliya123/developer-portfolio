@@ -11,3 +11,4 @@ async function run() {
   console.log('Checked all projects for awards');
 }
 run();
+

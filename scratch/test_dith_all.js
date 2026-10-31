@@ -4,3 +4,4 @@ for (const k in pages) {
     console.log(k, pages[k].includes('id="dith-data"'));
   }
 }
+

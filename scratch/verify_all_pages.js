@@ -67,3 +67,4 @@ async function testRoutes() {
 }
 
 testRoutes().catch(console.error);
+
