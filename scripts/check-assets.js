@@ -45,3 +45,4 @@ if (missing.length === 0) {
   console.error(`❌ Found ${missing.length} missing assets:`, missing);
   process.exit(1);
 }
+

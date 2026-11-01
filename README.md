@@ -120,3 +120,4 @@ The application uses an integrated hybrid runtime:
 - **`/contact`**: Interactive console with pre-filling mission chips and feedback states.
 - **`/login`**: Back office terminal with keyboard listeners (`ctrl+b`, `ctrl+enter`, `e`, `j`, `k`, `r`).
 - **`/work/[slug]`**: 13 comprehensive project case studies (Cegeta, Cereezer, Tradebot, Tessera, DEV IN GAME, DEV IN LIVE, DEV IN THE HOOD, SupERP, Lët'z Kola, Webshop Provençale, Enoprimes simulator, SMS group, iRoom).
+

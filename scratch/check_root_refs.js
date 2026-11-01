@@ -3,3 +3,4 @@ const fs = require('fs');
   const content = fs.readFileSync(f, 'utf8');
   console.log(f, 'has root css:', content.includes('css/'), 'has root js:', content.includes('js/'));
 });
+

@@ -57,3 +57,4 @@ export { projectsHtml } from './pages/projects';
 
 fs.writeFileSync(sourceFile, reexportContent);
 console.log('Updated data/pagesHtml.js to modular re-exports!');
+
