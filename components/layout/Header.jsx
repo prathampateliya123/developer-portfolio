@@ -52,7 +52,6 @@ export default function Header() {
         }`}
       >
         <div className="max-w-[1680px] mx-auto px-6 md:px-12 flex items-center justify-between">
-          {/* Brand Logo */}
           <Link
             href="/"
             className="flex items-center gap-3.5 group cursor-pointer"

@@ -1,4 +1,4 @@
-# Pratham Pateliya — React Frontend Developer Portfolio
+# Pratham Pateliya — Full Stack Developer Portfolio
 
 A modern, high-performance developer portfolio built with **Next.js 14 (App Router)**, **Tailwind CSS**, and **GSAP (ScrollSmoother & ScrollTrigger)**.
 
@@ -7,12 +7,14 @@ A modern, high-performance developer portfolio built with **Next.js 14 (App Rout
 ## 👨‍💻 Developer Profile
 
 - **Developer**: Pratham Pateliya
-- **Role**: React Frontend Developer
+- **Role**: Full Stack Developer
+- **Tagline**: *"Building End-to-End Web Applications with Modern Technologies."*
 - **Industry Experience**: Working professional in the IT industry (~6 months)
-- **Core Strengths**: React.js, JavaScript (ES6+), REST API Integration, Dashboard Development, Responsive Web Design, Component-Based Architecture
-- **Expanding Skills**: MERN Stack (Node.js, Express.js, MongoDB)
+- **Frontend Stack**: HTML5, CSS3, JavaScript (ES6+), React.js, Tailwind CSS, Responsive Web Design, Component-Based Architecture
+- **Backend Stack**: Node.js, Express.js, REST API Development, API Integration, Authentication, Server-Side Development
+- **Database & Tools**: MongoDB, MySQL, Database Design, CRUD Operations, Git & GitHub, Dashboard Development
+- **Additional Skills**: Third-Party API Integration, Payment Gateway Integration, Full Stack Application Development
 - **Education**: Online MCA — Jain University (Specialization: WOCS & IT)
-- **Portfolio Identity**: *"Building Modern Web Experiences with React."*
 
 ---
 
