@@ -31,7 +31,7 @@ export default function Footer() {
               />
             </svg>
             <p className="font-mono text-xs uppercase tracking-mono text-ink-3 mt-4">
-              DEV IN THE HOOD · Luxembourg
+              PRATHAM PATELIYA · React Developer
             </p>
           </div>
 
@@ -40,16 +40,14 @@ export default function Footer() {
             <p className="font-mono text-xs uppercase tracking-mono text-ink-3 mb-2">Get in touch</p>
             <p className="text-xl font-bold">
               <a
-                href="mailto:admin@devinthehood.com"
+                href="mailto:contact@prathampateliya.dev"
                 className="text-ink hover:text-red transition-colors"
               >
-                admin@devinthehood.com
+                contact@prathampateliya.dev
               </a>
             </p>
             <p className="font-mono text-xs text-ink-3 mt-2">
-              <a href="tel:+32497189998" className="hover:text-ink">
-                +32 497 18 99 98
-              </a>
+              <span className="text-ink-3">Available for opportunities</span>
             </p>
           </div>
 
@@ -57,7 +55,7 @@ export default function Footer() {
           <div className="flex flex-col gap-2 font-mono text-xs uppercase tracking-mono">
             <p className="text-ink-3 mb-1">Network</p>
             <a
-              href="https://github.com/jul6art"
+              href="https://github.com/prathampateliya123"
               target="_blank"
               rel="noopener noreferrer"
               className="text-ink hover:text-red transition-colors"
@@ -65,37 +63,22 @@ export default function Footer() {
               GitHub ↗
             </a>
             <a
-              href="https://www.linkedin.com/in/geoffrey-kratz-042b8380"
+              href="https://www.linkedin.com/in/prathampateliya"
               target="_blank"
               rel="noopener noreferrer"
               className="text-ink hover:text-red transition-colors"
             >
               LinkedIn ↗
             </a>
-            <a
-              href="https://stackexchange.com/users/9558682/jul6art"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-ink hover:text-red transition-colors"
-            >
-              Stack Exchange ↗
-            </a>
           </div>
 
-          {/* Accolades */}
+          {/* Standards & Validations */}
           <div className="flex flex-col gap-3">
-            <p className="font-mono text-xs uppercase tracking-mono text-ink-3">Recognition</p>
+            <p className="font-mono text-xs uppercase tracking-mono text-ink-3">Standards</p>
             <div className="flex items-center gap-3">
-              <a
-                href="https://www.awwwards.com/sites/dev-in-the-hood"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block hover:opacity-80 transition-opacity"
-              >
-                <span className="font-mono text-[10px] uppercase tracking-mono px-3 py-1.5 bg-black text-[#5ABDB2] rounded border font-bold">
-                  2× Awwwards Nominee
-                </span>
-              </a>
+              <span className="font-mono text-[10px] uppercase tracking-mono px-3 py-1.5 bg-black text-[#5ABDB2] rounded border font-bold">
+                W3C Valid
+              </span>
               <div className="relative w-20 h-7">
                 <Image
                   src="/images/w3c-css-valid.png"
@@ -112,9 +95,9 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs uppercase tracking-mono text-ink-3">
           <p>
             <Link href="/login" className="hover:text-ink transition-colors mr-2">
-              © 2026 dev in the hood
+              © 2026 Pratham Pateliya
             </Link>
-            · Jul6art — Lead developer
+            · React Frontend Developer
           </p>
 
           <button
