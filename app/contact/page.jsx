@@ -1,9 +1,10 @@
 import PageRunner from '@/components/PageRunner';
 import { contactHtml } from '@/data/pages/contact';
+import { siteConfig } from '@/data/siteConfig';
 
 export const metadata = {
-  title: 'Contact — DEV IN THE HOOD',
-  description: "Let's talk. Full-stack development, Symfony platforms and front-end work — from Luxembourg, on site or remote.",
+  title: `Contact — ${siteConfig.name}`,
+  description: `Get in touch with ${siteConfig.name}, ${siteConfig.role}. Available for frontend development roles, React projects, and collaborations.`,
 };
 
 export default function ContactPage() {

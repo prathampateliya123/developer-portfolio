@@ -1,9 +1,10 @@
 import PageRunner from '@/components/PageRunner';
 import { homeHtml } from '@/data/pages/home';
+import { siteConfig } from '@/data/siteConfig';
 
 export const metadata = {
-  title: 'DEV IN THE HOOD — Jul6art, full-stack developer',
-  description: 'Full-stack developer in Luxembourg. Symfony platforms, API-first architectures, e-commerce and front-end motion work.',
+  title: `${siteConfig.name} — ${siteConfig.role}`,
+  description: siteConfig.description,
 };
 
 export default function HomePage() {

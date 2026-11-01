@@ -7,7 +7,7 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: `${siteConfig.name} — ${siteConfig.author}, full-stack developer`,
+  title: `${siteConfig.name} — ${siteConfig.role}`,
   description: siteConfig.description,
   author: siteConfig.author,
   icons: {
@@ -20,13 +20,15 @@ export const metadata = {
   openGraph: {
     type: 'website',
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — ${siteConfig.author}, full-stack developer`,
+    title: `${siteConfig.name} — ${siteConfig.role}`,
     description: siteConfig.description,
     url: `${siteConfig.url}/`,
     images: ['/assets/img/social-card.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
+    title: `${siteConfig.name} — ${siteConfig.role}`,
+    description: siteConfig.description,
   },
 };
 
@@ -61,12 +63,18 @@ export default function RootLayout({ children }) {
               jobTitle: siteConfig.jobTitle,
               url: `${siteConfig.url}/`,
               email: `mailto:${siteConfig.email}`,
-              address: { '@type': 'PostalAddress', addressCountry: 'LU' },
-              knowsAbout: siteConfig.skills,
+              knowsAbout: [
+                ...siteConfig.skills.frontend,
+                ...siteConfig.skills.development,
+                ...siteConfig.skills.currentlyLearning,
+              ],
+              alumniOf: {
+                '@type': 'EducationalOrganization',
+                name: siteConfig.education.institution,
+              },
               sameAs: [
                 siteConfig.socials.github,
                 siteConfig.socials.linkedin,
-                siteConfig.socials.stackExchange,
               ],
             }),
           }}

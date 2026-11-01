@@ -1,9 +1,10 @@
 import PageRunner from '@/components/PageRunner';
 import { loginHtml } from '@/data/pages/login';
+import { siteConfig } from '@/data/siteConfig';
 
 export const metadata = {
-  title: 'Sign in · DEV IN THE HOOD',
-  description: 'Dev in the hood Back Office login console.',
+  title: `Sign in · ${siteConfig.name}`,
+  description: `${siteConfig.name} Back Office console.`,
 };
 
 export default function LoginPage() {
