@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "verify:all": "node scripts/verify-all.js",
+    "verify:assets": "node scripts/check-assets.js",
+    "verify:scroll": "node scripts/benchmark-scroll.js"
   },
   "dependencies": {
     "lucide-react": "^0.475.0",
