@@ -1,5 +1,5 @@
 import PageRunner from '@/components/PageRunner';
-import { contactHtml } from '@/data/pagesHtml';
+import { contactHtml } from '@/data/pages/contact';
 
 export const metadata = {
   title: 'Contact — DEV IN THE HOOD',

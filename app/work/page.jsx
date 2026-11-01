@@ -1,5 +1,5 @@
 import PageRunner from '@/components/PageRunner';
-import { workHtml } from '@/data/pagesHtml';
+import { workHtml } from '@/data/pages/work';
 
 export const metadata = {
   title: 'Selected work — DEV IN THE HOOD',

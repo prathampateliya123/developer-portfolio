@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import PageRunner from '@/components/PageRunner';
-import { projectsHtml } from '@/data/pagesHtml';
+import { projectsHtml } from '@/data/pages/projects';
 
 const projectTitles = {
   cegeta: 'Cegeta',

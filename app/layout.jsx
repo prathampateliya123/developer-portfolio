@@ -1,14 +1,15 @@
 import './globals.css';
+import { siteConfig } from '@/data/siteConfig';
 
 export const viewport = {
   themeColor: '#f4f1ea',
 };
 
 export const metadata = {
-  metadataBase: new URL('https://devinthehood.com'),
-  title: 'DEV IN THE HOOD — Jul6art, full-stack developer',
-  description: 'Full-stack developer in Luxembourg. Symfony platforms, API-first architectures, e-commerce and front-end motion work.',
-  author: 'Jul6art',
+  metadataBase: new URL(siteConfig.url),
+  title: `${siteConfig.name} — ${siteConfig.author}, full-stack developer`,
+  description: siteConfig.description,
+  author: siteConfig.author,
   icons: {
     icon: [
       { url: '/assets/img/icon.ico', sizes: '32x32' },
@@ -18,10 +19,10 @@ export const metadata = {
   },
   openGraph: {
     type: 'website',
-    siteName: 'DEV IN THE HOOD',
-    title: 'DEV IN THE HOOD — Jul6art, full-stack developer',
-    description: 'Full-stack developer in Luxembourg. Symfony platforms, API-first architectures, e-commerce and front-end motion work.',
-    url: 'https://devinthehood.com/',
+    siteName: siteConfig.name,
+    title: `${siteConfig.name} — ${siteConfig.author}, full-stack developer`,
+    description: siteConfig.description,
+    url: `${siteConfig.url}/`,
     images: ['/assets/img/social-card.jpg'],
   },
   twitter: {
@@ -33,7 +34,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="js" suppressHydrationWarning>
       <head>
-        <link rel="canonical" href="https://devinthehood.com/" />
+        <link rel="canonical" href={`${siteConfig.url}/`} />
         <link rel="author" href="/humans.txt" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -56,16 +57,16 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Person',
-              name: 'Jul6art',
-              jobTitle: 'Lead developer',
-              url: 'https://devinthehood.com/',
-              email: 'mailto:admin@devinthehood.com',
+              name: siteConfig.author,
+              jobTitle: siteConfig.jobTitle,
+              url: `${siteConfig.url}/`,
+              email: `mailto:${siteConfig.email}`,
               address: { '@type': 'PostalAddress', addressCountry: 'LU' },
-              knowsAbout: ['Symfony', 'PHP', 'API Platform', 'SaaS', 'E-commerce', 'GSAP'],
+              knowsAbout: siteConfig.skills,
               sameAs: [
-                'https://github.com/jul6art',
-                'https://www.linkedin.com/in/geoffrey-kratz-042b8380',
-                'https://stackexchange.com/users/9558682/jul6art',
+                siteConfig.socials.github,
+                siteConfig.socials.linkedin,
+                siteConfig.socials.stackExchange,
               ],
             }),
           }}

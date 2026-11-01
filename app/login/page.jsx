@@ -1,5 +1,5 @@
 import PageRunner from '@/components/PageRunner';
-import { loginHtml } from '@/data/pagesHtml';
+import { loginHtml } from '@/data/pages/login';
 
 export const metadata = {
   title: 'Sign in · DEV IN THE HOOD',

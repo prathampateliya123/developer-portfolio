@@ -1,5 +1,5 @@
 import PageRunner from '@/components/PageRunner';
-import { homeHtml } from '@/data/pagesHtml';
+import { homeHtml } from '@/data/pages/home';
 
 export const metadata = {
   title: 'DEV IN THE HOOD — Jul6art, full-stack developer',
