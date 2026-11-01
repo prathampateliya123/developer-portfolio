@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { siteConfig } from '@/data/siteConfig';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,15 +15,10 @@ export default function Header() {
   useEffect(() => {
     const updateTime = () => {
       try {
-        const formatter = new Intl.DateTimeFormat('en-GB', {
-          hour: '2-digit',
-          minute: '2-digit',
-          timeZone: 'Europe/Luxembourg',
-        });
-        setTime(formatter.format(new Date()));
-      } catch (err) {
         const d = new Date();
         setTime(`${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`);
+      } catch (err) {
+        setTime('--:--');
       }
     };
 
@@ -40,10 +36,10 @@ export default function Header() {
     };
   }, []);
 
-  const navItems = [
-    { label: 'Index', href: '/', number: '01' },
-    { label: 'Work', href: '/work', number: '02' },
-    { label: 'Contact', href: '/contact', number: '03' },
+  const navItems = siteConfig.nav || [
+    { label: 'Index', href: '/', id: '01' },
+    { label: 'Work', href: '/work', id: '02' },
+    { label: 'Contact', href: '/contact', id: '03' },
   ];
 
   return (
@@ -60,7 +56,7 @@ export default function Header() {
           <Link
             href="/"
             className="flex items-center gap-3.5 group cursor-pointer"
-            aria-label="DEV IN THE HOOD — home"
+            aria-label={`${siteConfig.name} — home`}
           >
             <svg
               className="w-8 h-8 transition-transform duration-300 group-hover:scale-105"
@@ -79,7 +75,7 @@ export default function Header() {
             <div className="relative w-36 h-6 hidden sm:block">
               <Image
                 src="/images/logo_wordmark.png"
-                alt="dev in the hood"
+                alt={`${siteConfig.name} — ${siteConfig.role}`}
                 fill
                 className="object-contain"
                 priority
@@ -113,7 +109,7 @@ export default function Header() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-online opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-online"></span>
             </span>
-            <span>Luxembourg</span>
+            <span>Available for work</span>
             <span className="text-ink font-semibold">{time}</span>
           </div>
 
@@ -159,7 +155,7 @@ export default function Header() {
                   onClick={() => setMenuOpen(false)}
                   className="flex items-baseline gap-4 text-3xl font-black uppercase tracking-tight text-ink hover:text-red transition-colors"
                 >
-                  <span className="font-mono text-sm text-ink-3 font-normal">{item.number}</span>
+                  <span className="font-mono text-sm text-ink-3 font-normal">{item.id}</span>
                   {item.label}
                 </Link>
               </li>
@@ -169,17 +165,17 @@ export default function Header() {
 
         <div className="border-t border-ink/10 pt-6 flex flex-col gap-3 font-mono text-xs uppercase tracking-mono text-ink-3">
           <a
-            href="mailto:admin@devinthehood.com"
+            href={`mailto:${siteConfig.email}`}
             className="text-red font-medium hover:underline"
           >
-            admin@devinthehood.com
+            {siteConfig.email}
           </a>
           <div className="flex gap-4">
-            <a href="https://github.com/jul6art" target="_blank" rel="noopener noreferrer" className="hover:text-ink">
-              GitHub
+            <a href={siteConfig.socials.github} target="_blank" rel="noopener noreferrer" className="hover:text-ink">
+              GitHub ↗
             </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-ink">
-              LinkedIn
+            <a href={siteConfig.socials.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-ink">
+              LinkedIn ↗
             </a>
           </div>
         </div>

@@ -1,48 +1,73 @@
 /**
- * Site configuration & profile for Pratham Pateliya — React Frontend Developer
+ * Site configuration & profile for Pratham Pateliya — Full Stack Developer
  */
 export const siteConfig = {
   name: 'Pratham Pateliya',
-  title: 'Pratham Pateliya — React Frontend Developer',
-  role: 'React Frontend Developer',
-  headline: 'Building Modern Web Experiences with React.',
-  tagline: 'React.js · JavaScript · REST APIs · Dashboard Development',
+  title: 'Pratham Pateliya — Full Stack Developer',
+  role: 'Full Stack Developer',
+  headline: 'Full Stack Developer',
+  supportingHeadline: 'Turning Ideas Into Powerful Digital Experiences.',
+  tagline: 'Building End-to-End Web Applications with Modern Technologies.',
   author: 'Pratham Pateliya',
-  jobTitle: 'React Frontend Developer',
-  location: 'Available for Remote & On-Site',
+  jobTitle: 'Full Stack Developer',
+  location: 'Available for Opportunities',
   email: 'contact@prathampateliya.dev',
   url: 'https://devinthehood.com',
   description:
-    'React Frontend Developer with ~6 months of professional IT experience. Specializing in React.js, JavaScript, responsive component architectures, REST API integration, and dynamic dashboard interfaces.',
-  
+    "I'm a developer passionate about building modern web applications, creating intuitive frontend experiences, developing robust backend systems, and connecting everything through well-structured APIs.",
+
   about: {
     intro:
-      'React Frontend Developer with ~6 months of professional development experience in the IT industry. Focused on building responsive, component-driven web applications, integrating real-world REST APIs, and crafting intuitive dashboards.',
-    goals:
-      'Committed to clean code principles, performance, and user experience, with the long-term goal of becoming a versatile, strong full-stack developer in the MERN ecosystem.',
+      'I am a Full Stack Developer passionate about developing complete, modern web applications from the ground up. My focus spans designing responsive, intuitive frontend interfaces, developing scalable backend APIs, and structuring robust databases that power seamless digital experiences.',
+    experience:
+      'With approximately 6 months of professional IT development experience, I bring practical hands-on experience in building reusable React components, developing RESTful APIs with Node.js and Express, implementing secure authentication, and managing database operations with MongoDB and MySQL.',
+    journey:
+      'I am continuously strengthening my full-stack engineering skills, learning modern architectural patterns, and working towards becoming a well-rounded developer who delivers dependable, end-to-end web solutions.'
   },
 
   experience: {
-    role: 'React Developer / Frontend Developer',
+    role: 'Full Stack Developer',
     duration: 'Approximately 6 months',
     industry: 'IT Industry',
     responsibilities: [
-      'Developing responsive, reusable UI components using React.js and modern JavaScript (ES6+)',
-      'Integrating RESTful APIs and handling asynchronous data flows',
-      'Building interactive, data-driven dashboard interfaces and modular views',
-      'Translating UI/UX mockups into clean, accessible, and mobile-friendly layouts'
+      'Developing responsive, component-driven frontend user interfaces with React.js, JavaScript (ES6+), and Tailwind CSS',
+      'Building and maintaining RESTful APIs and server-side logic using Node.js and Express.js',
+      'Designing database models, relationships, and performing efficient CRUD operations using MongoDB and MySQL',
+      'Integrating third-party services, handling authentication, and developing dynamic dashboard interfaces'
     ],
   },
 
   skills: {
-    frontend: ['HTML5', 'CSS3', 'JavaScript', 'React.js'],
-    development: [
-      'REST API Integration',
-      'Dashboard Development',
+    frontend: [
+      'HTML5',
+      'CSS3',
+      'JavaScript',
+      'React.js',
+      'Tailwind CSS',
       'Responsive Web Design',
       'Component-Based Architecture'
     ],
-    currentlyLearning: ['Node.js', 'Express.js', 'MongoDB', 'MERN Stack']
+    backend: [
+      'Node.js',
+      'Express.js',
+      'REST API Development',
+      'API Integration',
+      'Authentication',
+      'Server-Side Development'
+    ],
+    databaseAndTools: [
+      'MongoDB',
+      'MySQL',
+      'Database Design',
+      'CRUD Operations',
+      'Git & GitHub',
+      'Dashboard Development'
+    ],
+    additional: [
+      'Third-Party API Integration',
+      'Payment Gateway Integration',
+      'Full Stack Application Development'
+    ]
   },
 
   education: {

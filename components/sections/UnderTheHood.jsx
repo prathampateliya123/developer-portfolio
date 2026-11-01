@@ -1,10 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { siteConfig } from '@/data/siteConfig';
 
 export default function UnderTheHood() {
-  const [balance, setBalance] = useState(50);
-
   return (
     <section id="under-the-hood" data-night="" className="py-24 bg-night text-bg border-t border-night-line relative">
       <div className="max-w-[1680px] mx-auto px-6 md:px-12">
@@ -41,7 +39,7 @@ export default function UnderTheHood() {
             </svg>
 
             <span className="font-mono text-xs uppercase tracking-mono text-dim mt-4">
-              Dual-Discipline Engineering
+              Full Stack Web Engineering
             </span>
           </div>
 
@@ -62,60 +60,93 @@ export default function UnderTheHood() {
             {/* Name & Title */}
             <div className="py-6">
               <h3 className="text-display text-4xl sm:text-5xl text-bg mb-1">
-                Jul6art
+                {siteConfig.name}
               </h3>
               <p className="font-mono text-xs sm:text-sm uppercase tracking-mono text-amber">
-                Lead developer · Luxembourg
+                {siteConfig.role} · IT Professional
               </p>
             </div>
 
-            {/* Description */}
-            <p className="text-base sm:text-lg text-bg/90 font-light leading-relaxed mb-6">
-              Developer in Luxembourg, working from design to deployment: multi-tenant SaaS platforms, e-commerce, backoffices and API layers — plus the front-end craft that makes them worth using.
+            {/* Authentic Description */}
+            <p className="text-base sm:text-lg text-bg/90 font-light leading-relaxed mb-4">
+              {siteConfig.about.intro}
             </p>
-            <p className="text-sm text-dim leading-relaxed mb-8">
-              I work full-stack on Symfony and PHP, with API-first architectures, a strong bias for modular code and interfaces built to last. Some of it ships for clients through agencies, some of it is built in-house from the first line to production.
+            <p className="text-sm text-dim leading-relaxed mb-4">
+              {siteConfig.about.experience}
+            </p>
+            <p className="text-sm text-dim leading-relaxed mb-6">
+              {siteConfig.about.journey}
             </p>
 
-            {/* Stats Grid */}
-            <dl className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-6 bg-night rounded-xl border border-night-line mb-8 font-mono">
+            {/* Key Attributes / Stats */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-6 border-y border-night-line font-mono">
               <div>
-                <dt className="text-[10px] uppercase tracking-mono text-dim mb-1">Projects</dt>
-                <dd className="text-2xl font-bold text-bg">13</dd>
+                <span className="text-xs uppercase tracking-mono text-dim block">Experience</span>
+                <span className="text-lg font-bold text-bg">~6 Months</span>
               </div>
               <div>
-                <dt className="text-[10px] uppercase tracking-mono text-dim mb-1">Shipping Since</dt>
-                <dd className="text-2xl font-bold text-bg">2015</dd>
+                <span className="text-xs uppercase tracking-mono text-dim block">Focus</span>
+                <span className="text-lg font-bold text-amber">Full Stack</span>
               </div>
               <div>
-                <dt className="text-[10px] uppercase tracking-mono text-dim mb-1">Awwwards</dt>
-                <dd className="text-2xl font-bold text-amber">2</dd>
+                <span className="text-xs uppercase tracking-mono text-dim block">Industry</span>
+                <span className="text-lg font-bold text-bg">IT Sector</span>
               </div>
               <div>
-                <dt className="text-[10px] uppercase tracking-mono text-dim mb-1">Location</dt>
-                <dd className="text-2xl font-bold text-red">LU</dd>
+                <span className="text-xs uppercase tracking-mono text-dim block">Education</span>
+                <span className="text-lg font-bold text-red">Online MCA</span>
               </div>
-            </dl>
+            </div>
 
-            {/* Front vs Back Interactive Balance Meter */}
-            <div className="p-4 bg-night rounded-xl border border-night-line">
-              <div className="flex justify-between items-center font-mono text-xs uppercase tracking-mono mb-2">
-                <span className={balance < 50 ? 'text-red font-bold' : 'text-dim'}>
-                  Front: {100 - balance}%
-                </span>
-                <span className="text-[10px] text-dim">Skill Balance</span>
-                <span className={balance > 50 ? 'text-amber font-bold' : 'text-dim'}>
-                  Back: {balance}%
-                </span>
+            {/* Technical Skills Stack in 3 Categories */}
+            <div className="mt-6 flex flex-col gap-5 font-mono text-xs uppercase tracking-mono">
+              <div>
+                <span className="text-dim block mb-2 font-bold text-red">1. Frontend Development</span>
+                <div className="flex flex-wrap gap-2">
+                  {siteConfig.skills.frontend.map((skill) => (
+                    <span key={skill} className="px-2.5 py-1 bg-night border border-night-line text-bg rounded font-medium">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <input
-                type="range"
-                min="10"
-                max="90"
-                value={balance}
-                onChange={(e) => setBalance(Number(e.target.value))}
-                className="w-full accent-red cursor-pointer h-2 bg-night-3 rounded-lg appearance-none"
-              />
+
+              <div>
+                <span className="text-dim block mb-2 font-bold text-amber">2. Backend Development</span>
+                <div className="flex flex-wrap gap-2">
+                  {siteConfig.skills.backend.map((dev) => (
+                    <span key={dev} className="px-2.5 py-1 bg-night border border-night-line text-amber rounded font-medium">
+                      {dev}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <span className="text-dim block mb-2 font-bold text-online">3. Database & Tools</span>
+                <div className="flex flex-wrap gap-2">
+                  {siteConfig.skills.databaseAndTools.map((item) => (
+                    <span key={item} className="px-2.5 py-1 bg-night border border-night-line text-bg/90 rounded font-medium">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <span className="text-dim block mb-2 font-bold text-dim">Additional Development Skills</span>
+                <div className="flex flex-wrap gap-2">
+                  {siteConfig.skills.additional.map((item) => (
+                    <span key={item} className="px-2.5 py-1 bg-night/50 border border-night-line/50 text-dim rounded">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="pt-2 text-dim text-[11px] normal-case">
+                🎓 Pursuing Online MCA from {siteConfig.education.institution} ({siteConfig.education.specialization})
+              </div>
             </div>
           </article>
         </div>
@@ -123,4 +154,3 @@ export default function UnderTheHood() {
     </section>
   );
 }
-

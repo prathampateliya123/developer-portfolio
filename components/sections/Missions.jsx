@@ -3,15 +3,15 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronRight, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const missionData = [
   {
     id: 0,
     hex: '01',
-    title: 'Web platforms',
-    desc: 'Multi-tenant SaaS, ERP / CRM backoffices, roles and permissions, subscription-driven feature flags.',
-    loadout: ['Symfony', 'PHP', 'Doctrine', 'Multi-tenant'],
+    title: 'React & Web Applications',
+    desc: 'Building responsive single-page web applications with React.js, clean component hierarchies, state handling, and reusable architecture.',
+    loadout: ['React.js', 'JavaScript (ES6+)', 'Tailwind CSS', 'Next.js'],
     shops: [
       { name: 'SupERP', image: '/images/superp-dashboard_1.jpg' },
       { name: 'DEV IN LIVE', image: '/images/devinlive-home_1.jpg' },
@@ -21,9 +21,9 @@ const missionData = [
   {
     id: 1,
     hex: '02',
-    title: 'APIs & integrations',
-    desc: 'API-first design, JWT-secured endpoints, webservices and third-party integrations.',
-    loadout: ['API Platform', 'REST', 'JWT', 'Mercure'],
+    title: 'APIs & Dashboards',
+    desc: 'Connecting RESTful endpoints, handling asynchronous data flows, filtering datasets, and building interactive dashboard views.',
+    loadout: ['REST APIs', 'Async Data', 'Dashboards', 'State Architecture'],
     shops: [
       { name: 'SupERP', image: '/images/superp-dashboard_1.jpg' },
       { name: 'Cegeta', image: '/images/cegeta-home_1.jpg' },
@@ -33,9 +33,9 @@ const missionData = [
   {
     id: 2,
     hex: '03',
-    title: 'E-commerce',
-    desc: 'Webshops, catalogues, order flows and the backoffice tooling that keeps them running.',
-    loadout: ['E-commerce', 'Backoffice', 'Payments', 'Order Flow'],
+    title: 'Responsive UI Design',
+    desc: 'Translating visual concepts and design specifications into pixel-clean, accessible, mobile-first responsive interfaces.',
+    loadout: ['HTML5', 'CSS3 / Tailwind', 'Responsive Design', 'Flexbox & Grid'],
     shops: [
       { name: 'Webshop Provençale', image: '/images/webshop-home_1.jpg' },
     ],
@@ -43,9 +43,9 @@ const missionData = [
   {
     id: 3,
     hex: '04',
-    title: 'Front-end & motion',
-    desc: 'Design integration, responsive systems and animation work — from micro-interactions to award-nominated sites.',
-    loadout: ['GSAP', 'SCSS', 'Accessibility', 'SEO', 'Tailwind'],
+    title: 'Interactivity & Motion',
+    desc: 'Crafting subtle micro-interactions, smooth scroll handling, and interactive component transitions that feel crisp and intuitive.',
+    loadout: ['Component States', 'GSAP', 'Accessibility', 'Modern UI/UX'],
     shops: [
       { name: 'DEV IN THE HOOD', image: '/images/devinthehood-cover_1.jpg' },
       { name: "Lët'z Kola", image: '/images/letz-intro_1.jpg' },
@@ -71,7 +71,7 @@ export default function Missions() {
             Choose your <span className="italic font-normal text-red">mission.</span>
           </h2>
           <p className="mt-4 font-mono text-xs sm:text-sm uppercase tracking-mono text-ink-2 max-w-xl">
-            Four kinds of jobs. Pick one: the contact message opens ready with your requirements.
+            Key areas of frontend engineering focus. Select an area to inspect deliverables and capabilities.
           </p>
         </div>
 
@@ -79,34 +79,36 @@ export default function Missions() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Mission List Buttons (Left) */}
           <div className="lg:col-span-5 flex flex-col gap-3">
-            {missionData.map((m) => {
-              const isPicked = selectedMission === m.id;
+            {missionData.map((mission) => {
+              const isSelected = selectedMission === mission.id;
               return (
                 <button
-                  key={m.id}
+                  key={mission.id}
                   type="button"
-                  onClick={() => setSelectedMission(m.id)}
-                  className={`w-full text-left p-5 rounded-xl border transition-all duration-300 flex items-center justify-between ${
-                    isPicked
-                      ? 'bg-ink text-bg border-ink shadow-lg translate-x-2'
-                      : 'bg-bg-2 text-ink border-ink/15 hover:border-ink hover:bg-bg-3'
+                  onClick={() => setSelectedMission(mission.id)}
+                  className={`w-full text-left p-6 rounded-xl border transition-all duration-300 flex items-center justify-between group cursor-pointer ${
+                    isSelected
+                      ? 'bg-ink text-bg border-ink shadow-xl translate-x-2'
+                      : 'bg-bg hover:bg-ink/5 border-ink/15 text-ink'
                   }`}
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-5">
                     <span
-                      className={`font-mono text-xs px-2.5 py-1 rounded font-bold ${
-                        isPicked ? 'bg-red text-white' : 'bg-ink/10 text-ink'
+                      className={`font-mono text-xs font-bold px-2.5 py-1 rounded ${
+                        isSelected ? 'bg-red text-white' : 'bg-ink/10 text-ink-2 group-hover:text-red'
                       }`}
                     >
-                      {m.hex}
+                      {mission.hex}
                     </span>
-                    <span className="text-lg font-bold uppercase tracking-tight">
-                      {m.title}
-                    </span>
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-bold tracking-tight">
+                        {mission.title}
+                      </h3>
+                    </div>
                   </div>
-                  <ChevronRight
-                    className={`w-5 h-5 transition-transform ${
-                      isPicked ? 'text-red translate-x-1' : 'text-ink-3'
+                  <ArrowRight
+                    className={`w-5 h-5 transition-transform duration-300 ${
+                      isSelected ? 'text-red translate-x-1' : 'text-ink-3 group-hover:translate-x-1'
                     }`}
                   />
                 </button>
@@ -114,83 +116,59 @@ export default function Missions() {
             })}
           </div>
 
-          {/* Mission Detail Screen (Right) */}
-          <div
-            data-night=""
-            className="lg:col-span-7 bg-night text-bg border border-night-line rounded-2xl p-8 sm:p-10 shadow-2xl relative"
-          >
-            <div className="flex items-center justify-between pb-4 border-b border-night-line mb-6 font-mono text-xs uppercase tracking-mono">
-              <span className="text-amber flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-amber" />
-                Mission {active.hex} Selected
+          {/* Mission Detail Display Card (Right) */}
+          <div className="lg:col-span-7 bg-white dark:bg-night-2 rounded-2xl border border-ink/10 p-8 sm:p-12 shadow-xl flex flex-col justify-between min-h-[460px]">
+            <div>
+              <div className="flex items-center justify-between pb-6 border-b border-ink/10 mb-6">
+                <span className="font-mono text-xs uppercase tracking-mono text-red font-bold">
+                  Mission / {active.hex}
+                </span>
+                <span className="font-mono text-xs uppercase tracking-mono text-ink-3">
+                  Frontend Discipline
+                </span>
+              </div>
+
+              <h4 className="text-display text-3xl sm:text-4xl text-ink mb-4">
+                {active.title}
+              </h4>
+              <p className="text-base sm:text-lg text-ink-2 font-light leading-relaxed mb-8">
+                {active.desc}
+              </p>
+
+              {/* Technical Loadout Pills */}
+              <div className="mb-10">
+                <span className="font-mono text-xs uppercase tracking-mono text-ink-3 block mb-3">
+                  Technical Loadout
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {active.loadout.map((item) => (
+                    <span
+                      key={item}
+                      className="px-3 py-1.5 rounded-full font-mono text-xs uppercase tracking-mono bg-ink/5 border border-ink/10 text-ink font-semibold"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* CTA Link */}
+            <div className="pt-6 border-t border-ink/10 flex items-center justify-between">
+              <span className="font-mono text-xs uppercase tracking-mono text-ink-3">
+                Ready to collaborate?
               </span>
-              <span className="text-dim">Spec Ready</span>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-mono text-red font-bold hover:underline"
+              >
+                <span>Open contact console</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
-
-            <h3 className="text-display text-3xl sm:text-4xl text-bg mb-4">
-              {active.title}
-            </h3>
-            <p className="text-sm sm:text-base text-dim leading-relaxed mb-8">
-              {active.desc}
-            </p>
-
-            {/* Loadout Tech Pills */}
-            <div className="mb-8">
-              <p className="font-mono text-xs uppercase tracking-mono text-amber mb-3">
-                Loadout Architecture
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {active.loadout.map((tech) => (
-                  <span
-                    key={tech}
-                    className="font-mono text-xs uppercase tracking-mono bg-night-2 border border-night-line text-bg px-3.5 py-1.5 rounded-full"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Shipped with it */}
-            <div className="mb-8">
-              <p className="font-mono text-xs uppercase tracking-mono text-dim mb-3">
-                Selected Work built with it
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                {active.shops.map((s) => (
-                  <div
-                    key={s.name}
-                    className="relative rounded-lg overflow-hidden border border-night-line group bg-night-2"
-                  >
-                    <div className="relative h-24 w-full">
-                      <Image
-                        src={s.image}
-                        alt={s.name}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                        sizes="(max-width: 768px) 50vw, 20vw"
-                      />
-                    </div>
-                    <p className="p-2 font-mono text-[11px] text-center uppercase tracking-mono text-dim group-hover:text-amber">
-                      {s.name}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* CTA */}
-            <Link
-              href={`/contact?mission=${encodeURIComponent(active.title)}`}
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-red hover:bg-red-ink text-white rounded-full font-mono text-xs uppercase tracking-mono font-bold transition-colors shadow-lg"
-            >
-              <span>Choose this mission</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </div>
       </div>
     </section>
   );
 }
-

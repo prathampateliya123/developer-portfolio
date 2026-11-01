@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import PageRunner from '@/components/PageRunner';
 import { projectsHtml } from '@/data/pages/projects';
+import { siteConfig } from '@/data/siteConfig';
 
 const projectTitles = {
   cegeta: 'Cegeta',
@@ -27,8 +28,8 @@ export function generateStaticParams() {
 export function generateMetadata({ params }) {
   const name = projectTitles[params.slug] || params.slug;
   return {
-    title: `${name} — DEV IN THE HOOD`,
-    description: `Project case study: ${name} — DEV IN THE HOOD, Jul6art, full-stack developer in Luxembourg.`,
+    title: `${name} — Case Study | ${siteConfig.name}`,
+    description: `Case study: ${name} — Featured project in ${siteConfig.name}'s portfolio (${siteConfig.role}).`,
   };
 }
 

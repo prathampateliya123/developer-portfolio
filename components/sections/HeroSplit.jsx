@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ArrowDown } from 'lucide-react';
+import { siteConfig } from '@/data/siteConfig';
 
 export default function HeroSplit() {
   const [activeSide, setActiveSide] = useState('both'); // 'front' | 'back' | 'both'
@@ -23,15 +24,14 @@ export default function HeroSplit() {
         >
           <div className="max-w-xl mx-auto md:mr-0 md:ml-auto w-full">
             <span className="font-mono text-xs tracking-mono uppercase text-ink-3 block mb-4">
-              01 / The Surface
+              01 / The Frontend Experience
             </span>
             <h1 className="text-display text-5xl sm:text-7xl lg:text-8xl text-ink leading-[0.88] mb-6">
-              Every <br />
-              <span className="text-red italic font-normal">product</span> <br />
-              He builds
+              Full Stack <br />
+              <span className="text-red italic font-normal">Developer</span>
             </h1>
             <p className="font-mono text-xs md:text-sm uppercase tracking-mono text-ink-2 max-w-sm">
-              Design systems, responsive interfaces, micro-animations & pixel-level craft.
+              Turning ideas into powerful digital experiences with React.js, modern JavaScript, and responsive design.
             </p>
           </div>
         </div>
@@ -47,15 +47,15 @@ export default function HeroSplit() {
         >
           <div className="max-w-xl mx-auto md:ml-0 md:mr-auto w-full">
             <span className="font-mono text-xs tracking-mono uppercase text-amber block mb-4">
-              02 / The Engine
+              02 / The Backend Architecture
             </span>
             <h2 className="text-display text-5xl sm:text-7xl lg:text-8xl text-bg leading-[0.88] mb-6">
-              has two <br />
-              <span className="text-amber italic font-normal">sides…</span> <br />
-              <span className="text-red">both</span> sides.
+              Robust <br />
+              <span className="text-amber italic font-normal">APIs &</span> <br />
+              <span className="text-red">Databases</span>
             </h2>
             <p className="font-mono text-xs md:text-sm uppercase tracking-mono text-dim max-w-sm">
-              API-first architectures, modular Symfony bundles, high-scale SaaS & secure backends.
+              Node.js, Express.js, RESTful API architecture, authentication, and structured database management.
             </p>
           </div>
         </div>
@@ -71,9 +71,9 @@ export default function HeroSplit() {
               activeSide === 'front' ? 'bg-red text-white shadow' : 'text-ink-2 hover:text-ink'
             }`}
           >
-            Front
+            Frontend
           </button>
-          <span className="px-2 font-mono text-xs text-ink-3 font-bold">vs</span>
+          <span className="px-2 font-mono text-xs text-ink-3 font-bold">+</span>
           <button
             type="button"
             onClick={() => setActiveSide('back')}
@@ -81,7 +81,7 @@ export default function HeroSplit() {
               activeSide === 'back' ? 'bg-night text-amber shadow' : 'text-ink-2 hover:text-ink'
             }`}
           >
-            Back
+            Backend
           </button>
           <button
             type="button"
@@ -90,31 +90,26 @@ export default function HeroSplit() {
               activeSide === 'both' ? 'bg-ink text-bg font-semibold' : 'text-ink-3 hover:text-ink'
             }`}
           >
-            Both
+            Full Stack
           </button>
         </div>
 
         {/* Central Meta Statement */}
-        <div className="text-center bg-bg/85 backdrop-blur-md px-6 py-3 rounded-xl border border-ink/10 shadow-sm max-w-md">
-          <p className="font-mono text-xs md:text-sm uppercase tracking-mono text-ink">
-            Most developers <span className="italic text-red font-bold">pick a side</span>.
+        <div className="text-center bg-bg/90 backdrop-blur-md px-6 py-4 rounded-xl border border-ink/10 shadow-sm max-w-lg">
+          <p className="font-mono text-xs sm:text-sm uppercase tracking-mono text-ink font-bold mb-1">
+            {siteConfig.supportingHeadline}
           </p>
-          <p className="font-mono text-xs uppercase tracking-mono text-ink-3 mt-1">
-            Jul6art · Lead Developer · Luxembourg · Since 2015
+          <p className="font-mono text-[11px] text-ink-3 max-w-md">
+            {siteConfig.description}
           </p>
         </div>
       </div>
 
-      {/* Scroll Down Prompt */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 pointer-events-none">
-        <span className="font-mono text-[11px] uppercase tracking-mono text-ink-3">
-          Scroll down
-        </span>
-        <div className="w-8 h-8 rounded-full border border-ink/20 flex items-center justify-center animate-bounce text-red">
-          <ArrowDown className="w-4 h-4" />
-        </div>
+      {/* Scroll Down Hint */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none">
+        <span className="font-mono text-[11px] uppercase tracking-mono text-ink-3">Scroll down</span>
+        <ArrowDown className="w-4 h-4 text-red animate-bounce" />
       </div>
     </section>
   );
 }
-

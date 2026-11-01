@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { siteConfig } from '@/data/siteConfig';
 
 export default function Loader({ onComplete }) {
   const [count, setCount] = useState(0);
@@ -74,7 +75,7 @@ export default function Loader({ onComplete }) {
       {/* Footer count & info */}
       <div className="flex items-end justify-between font-mono">
         <p className="text-xs uppercase tracking-widest text-ink-3">
-          DEV IN THE HOOD — Luxembourg
+          {siteConfig.name.toUpperCase()} — {siteConfig.role}
         </p>
         <div className="text-4xl md:text-6xl font-black tracking-tight text-ink">
           <span>{count}</span>
@@ -84,4 +85,3 @@ export default function Loader({ onComplete }) {
     </div>
   );
 }
-

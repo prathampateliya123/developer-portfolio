@@ -1,102 +1,109 @@
-# DEV IN THE HOOD — Next.js 14 Developer Portfolio
+# Pratham Pateliya — React Frontend Developer Portfolio
 
-A 100% pixel-perfect, animation-identical conversion of [https://devinthehood.com/](https://devinthehood.com/) built with **Next.js 14 (App Router)**, **Tailwind CSS**, and modern JavaScript/JSX.
+A modern, high-performance developer portfolio built with **Next.js 14 (App Router)**, **Tailwind CSS**, and **GSAP (ScrollSmoother & ScrollTrigger)**.
 
 ---
 
-## 📁 Clean & Modular Folder Structure
+## 👨‍💻 Developer Profile
+
+- **Developer**: Pratham Pateliya
+- **Role**: React Frontend Developer
+- **Industry Experience**: Working professional in the IT industry (~6 months)
+- **Core Strengths**: React.js, JavaScript (ES6+), REST API Integration, Dashboard Development, Responsive Web Design, Component-Based Architecture
+- **Expanding Skills**: MERN Stack (Node.js, Express.js, MongoDB)
+- **Education**: Online MCA — Jain University (Specialization: WOCS & IT)
+- **Portfolio Identity**: *"Building Modern Web Experiences with React."*
+
+---
+
+## 📁 Clean & Production-Ready Folder Structure
 
 ```text
 developer-portfolio/
-├── app/                          # Next.js App Router (Routes & Layouts)
-│   ├── layout.jsx                # Root layout with fonts, meta, and deferred scripts
-│   ├── globals.css               # Global styling
-│   ├── page.jsx                  # Home portfolio page (/)
-│   ├── work/                     # Work directory (/work)
+├── app/                          # Next.js 14 App Router
+│   ├── layout.jsx                # Root layout with fonts, JSON-LD Schema & metadata
+│   ├── globals.css               # Global CSS styling
+│   ├── page.jsx                  # Main portfolio index page (/)
+│   ├── work/                     # Work overview (/work)
 │   │   ├── page.jsx
-│   │   └── [slug]/               # Dynamic SSG project case studies (/work/[slug])
+│   │   └── [slug]/               # Static SSG project case studies (/work/[slug])
 │   │       └── page.jsx
 │   ├── contact/                  # Interactive contact console (/contact)
 │   │   └── page.jsx
-│   └── login/                    # Back office sign-in console (/login)
+│   └── login/                    # Back office terminal console (/login)
 │       └── page.jsx
 │
-├── components/                   # Modular React & JSX Components
-│   ├── index.js                  # Central re-export hub
+├── components/                   # Modular React & JSX Architecture
+│   ├── index.js                  # Central re-export hub for all components
 │   ├── PageRunner.jsx            # Backward-compatible runner export
-│   ├── core/                     # Core engine components
-│   │   ├── PageRunner.jsx        # Synchronous body dataset bootstrap & markup runner
-│   │   ├── BackgroundEffects.jsx # Paper grain, grid lines & veil transition
-│   │   └── Cursor.jsx            # Custom interactive follower cursor
+│   ├── core/                     # Core engine runtime components
+│   │   ├── PageRunner.jsx        # Synchronous body bootstrap & runner
+│   │   ├── BackgroundEffects.jsx # Paper grain, grid lines & page veil
+│   │   └── Cursor.jsx            # Interactive follower cursor
 │   ├── layout/                   # Layout components
-│   │   ├── Header.jsx            # Site header, real-time clock & mobile burger
-│   │   └── Footer.jsx            # Site footer & back office doorway
-│   └── sections/                 # Portfolio sections
-│       ├── HeroSplit.jsx         # Split Day/Night hero with rotating hoodie SVG
+│   │   ├── Header.jsx            # Dynamic header, real-time status & navigation
+│   │   └── Footer.jsx            # Portfolio footer & contact links
+│   └── sections/                 # Modular portfolio sections
+│       ├── HeroSplit.jsx         # Split Day/Night hero with interactive toggle
 │       ├── TheStreet.jsx         # 13 street shops with horizontal scroll scrub
 │       ├── TheFactory.jsx        # Conveyor belt with hydraulic stamp & crates
-│       ├── PlayerCard.jsx        # Full-stack developer character card & stats
-│       ├── Missions.jsx          # Missions selector & console board
-│       ├── FinaleCTA.jsx         # Finale seam call-to-action
-│       └── Loader.jsx            # DrawSVG loader with 0% to 100% counter
+│       ├── Missions.jsx          # Interactive mission selector board
+│       ├── UnderTheHood.jsx      # Developer profile, skills breakdown & education
+│       ├── FinaleCTA.jsx         # Call-to-action seam
+│       └── Loader.jsx            # DrawSVG loader with progress indicator
 │
-├── data/                         # Structured Data & Modular Page Content
-│   ├── siteConfig.js             # Central metadata, author info & navigation config
-│   ├── projects.js               # Structured metadata for all 13 projects
-│   ├── pagesHtml.js              # Backward-compatible content export hub
+├── data/                         # Centralized Profile & Structured Content
+│   ├── siteConfig.js             # Single source of truth for profile, skills, bio & links
+│   ├── projects.js               # Structured metadata for all 13 case studies
+│   ├── pagesHtml.js              # Page content re-export hub
 │   └── pages/                    # Individual modular page contents
-│       ├── home.js               # Home page markup
-│       ├── work.js               # Work directory markup
-│       ├── contact.js            # Contact console markup
+│       ├── home.js               # Personalized Home page markup
+│       ├── work.js               # Personalized Work directory markup
+│       ├── contact.js            # Personalized Contact console markup
 │       ├── login.js              # Back office login markup
-│       └── projects/             # 13 individual case study markups
-│           ├── index.js          # Project map export
+│       └── projects/             # 13 individual case study templates
+│           ├── index.js          # Case study export registry
 │           ├── cegeta.js
 │           ├── cereezer.js
 │           ├── tradebot.js
 │           ├── tessera.js
 │           ├── devingame.js
 │           ├── dev-in-live.js
-│           ├── devinthehood.js   (Awwwards nominee)
+│           ├── devinthehood.js
 │           ├── superp.js
-│           ├── letz-kola.js      (Awwwards nominee)
+│           ├── letz-kola.js
 │           ├── provencale-webshop.js
 │           ├── enoprimes.js
 │           ├── sms-group.js
 │           └── iroom.js
 │
-├── public/                       # Authentic Static Assets (188 verified assets)
+├── public/                       # Verified Static Assets (188 assets)
 │   ├── build/                    # Webpack bundles, fonts & styles
-│   │   ├── fonts/                # JetBrains Mono, Archivo & FontAwesome glyphs
-│   │   ├── runtime.98187d6b.js
-│   │   ├── 854.7ec0aa7a.js
-│   │   ├── site.0197b589.js
-│   │   └── site.8cc5d90d.css
 │   ├── assets/                   # Vector badges & icons
 │   ├── images/                   # Project screenshots & logos
 │   ├── media/                    # Shop window cached visuals
-│   └── humans.txt                # Developer credentials
+│   └── humans.txt                # Developer credentials & standards
 │
-├── scripts/                      # Automation & Verification Tools
-│   ├── verify-all.js             # Headless Chrome audit for all 20 pages
-│   ├── benchmark-scroll.js       # ScrollSmoother damping & inertia benchmark
-│   └── check-assets.js           # Asset integrity check across all modules
+├── scripts/                      # Automated Verification & Benchmark Suite
+│   ├── verify-all.js             # Headless Google Chrome audit (all 20 static pages)
+│   ├── check-assets.js           # 188-asset integrity audit
+│   ├── benchmark-scroll.js       # GSAP ScrollSmoother damping curve benchmark
+│   ├── verify_protected_sections.js # Validates Street & Factory sections
+│   └── verify_awwwards_removed.js   # Asserts absence of award ribbons
 │
 ├── next.config.mjs               # Next.js configuration
-├── tailwind.config.js            # Tailwind CSS configuration
-├── package.json                  # Dependencies and NPM scripts
+├── tailwind.config.js            # Tailwind CSS theme & tokens
+├── package.json                  # Scripts & dependencies
 └── jsconfig.json                 # Path aliases (@/*)
 ```
 
 ---
 
-## ⚡ Motion & Animation Architecture
+## ⚡ Motion & Interaction Architecture
 
-The application uses an integrated hybrid runtime:
-- **GSAP ScrollSmoother**: Smooth inertial damping (`smooth: 1.1`, `smoothTouch: 0`, `normalizeScroll: false`).
-- **GSAP ScrollTrigger**: Pins split hero stage, scrubs horizontal shop tracks across 13 storefronts, and drives hydraulic factory presses.
-- **Dynamic SVG Scenes**: 23 SVG environments dynamically generated at runtime (`hoodie:hoodie-two-sides`, `factory-wall`, `factory-machines`, `lamp:day`, `lamp:night`).
-- **Synchronous Body Bootstrap**: Injects dataset configuration on server render to ensure the GSAP motion engine initializes with zero race conditions.
+- **GSAP ScrollSmoother**: Smooth inertial scrolling (`smooth: 1.1`, `smoothTouch: 0`, `normalizeScroll: false`).
+- **GSAP ScrollTrigger**: Drives pinned hero split scenes, horizontal shop track scrubbing, and conveyor factory mechanics.
+- **Synchronous Bootstrap**: Server-side dataset injection ensures zero-flicker initialization of the motion engine.
 
 ---
 
@@ -104,20 +111,21 @@ The application uses an integrated hybrid runtime:
 
 | Command | Description |
 | :--- | :--- |
-| `npm run dev` | Starts Next.js development server on `localhost:3000` |
+| `npm run dev` | Starts Next.js development server on `http://localhost:3000` |
 | `npm run build` | Builds optimized production static build (20 static pages) |
-| `npm run start` | Runs the production build on `localhost:3000` |
-| `npm run verify:all` | Runs headless Google Chrome audit across all routes |
+| `npm run start` | Runs the production build on `http://localhost:3000` |
+| `npm run verify` | Runs the complete audit: pages, assets, and protected sections |
+| `npm run verify:all` | Runs headless Google Chrome browser audit across all routes |
+| `npm run verify:assets` | Verifies integrity of all 188 local static assets in `public/` |
 | `npm run verify:scroll` | Measures GSAP ScrollSmoother damping curve & inertia |
-| `npm run verify:assets` | Verifies integrity of all 188 local static assets |
+| `npm run verify:sections`| Validates 13 shops & 13 factory crates remain untouched |
 
 ---
 
 ## 🌐 Routes Overview
 
-- **`/`**: Split-hero, street track with 13 shops, conveyor factory, player card, missions board, finale CTA.
-- **`/work`**: Project directory with category filtering and case study links.
-- **`/contact`**: Interactive console with pre-filling mission chips and feedback states.
-- **`/login`**: Back office terminal with keyboard listeners (`ctrl+b`, `ctrl+enter`, `e`, `j`, `k`, `r`).
-- **`/work/[slug]`**: 13 comprehensive project case studies (Cegeta, Cereezer, Tradebot, Tessera, DEV IN GAME, DEV IN LIVE, DEV IN THE HOOD, SupERP, Lët'z Kola, Webshop Provençale, Enoprimes simulator, SMS group, iRoom).
-
+- **`/`**: Split-hero, Street track with 13 shops, Conveyor Factory with 13 crates, Player Card, Missions board, Finale CTA.
+- **`/work`**: Case study directory with category filters.
+- **`/contact`**: Interactive console with message pre-filling and feedback states.
+- **`/login`**: Back office terminal with keyboard listeners.
+- **`/work/[slug]`**: 13 comprehensive project case studies.

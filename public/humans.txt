@@ -1,15 +1,14 @@
 /* TEAM */
   Developer: Pratham Pateliya
-  Role: React Frontend Developer
+  Role: Full Stack Developer
   Contact: contact@prathampateliya.dev
   GitHub: https://github.com/prathampateliya123
   LinkedIn: https://www.linkedin.com/in/prathampateliya
 
 /* THANKS */
-  Technologies: React.js, Next.js, Tailwind CSS, GSAP
+  Technologies: React.js, Node.js, Express.js, MongoDB, MySQL, Tailwind CSS, Next.js, GSAP
 
 /* SITE */
   Standards: HTML5, CSS3, JavaScript (ES6+), WCAG AA
-  Components: React, Component-Based Architecture
+  Components: React, Component-Based Architecture, REST APIs
   Application: Personal Developer Portfolio
-

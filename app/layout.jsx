@@ -65,8 +65,9 @@ export default function RootLayout({ children }) {
               email: `mailto:${siteConfig.email}`,
               knowsAbout: [
                 ...siteConfig.skills.frontend,
-                ...siteConfig.skills.development,
-                ...siteConfig.skills.currentlyLearning,
+                ...siteConfig.skills.backend,
+                ...siteConfig.skills.databaseAndTools,
+                ...siteConfig.skills.additional,
               ],
               alumniOf: {
                 '@type': 'EducationalOrganization',

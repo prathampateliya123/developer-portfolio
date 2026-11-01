@@ -31,7 +31,7 @@ export default function Footer() {
               />
             </svg>
             <p className="font-mono text-xs uppercase tracking-mono text-ink-3 mt-4">
-              PRATHAM PATELIYA · React Developer
+              PRATHAM PATELIYA · Full Stack Developer
             </p>
           </div>
 
@@ -97,7 +97,7 @@ export default function Footer() {
             <Link href="/login" className="hover:text-ink transition-colors mr-2">
               © 2026 Pratham Pateliya
             </Link>
-            · React Frontend Developer
+            · Full Stack Developer
           </p>
 
           <button

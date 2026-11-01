@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { ArrowRight, Mail } from 'lucide-react';
+import { siteConfig } from '@/data/siteConfig';
 
 export default function FinaleCTA() {
   return (
@@ -12,9 +13,9 @@ export default function FinaleCTA() {
       <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
         {/* Banner Pill */}
         <div className="inline-flex items-center gap-2 bg-night-2 border border-night-line rounded-full px-5 py-2 font-mono text-xs uppercase tracking-mono mb-8 shadow">
-          <span className="text-bg">Front</span>
+          <span className="text-bg">Frontend</span>
           <span className="text-red font-bold text-sm">+</span>
-          <span className="text-amber">Back</span>
+          <span className="text-amber">Backend</span>
         </div>
 
         {/* Heading */}
@@ -24,7 +25,7 @@ export default function FinaleCTA() {
         </h2>
 
         <p className="font-mono text-xs sm:text-sm uppercase tracking-mono text-dim max-w-lg mb-10 leading-relaxed">
-          From first architectural diagram and database schema to high-performance responsive interface and micro-motion.
+          {siteConfig.tagline}
         </p>
 
         {/* Actions */}
@@ -33,20 +34,19 @@ export default function FinaleCTA() {
             href="/contact"
             className="flex items-center gap-3 px-8 py-4 bg-red hover:bg-red-ink text-white rounded-full font-mono text-xs uppercase tracking-mono font-bold shadow-2xl hover:scale-105 transition-all"
           >
-            <span>Start a project</span>
+            <span>Start a conversation</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
 
           <a
-            href="mailto:admin@devinthehood.com"
+            href={`mailto:${siteConfig.email}`}
             className="flex items-center gap-2 px-6 py-4 border border-night-line hover:border-bg/40 text-bg rounded-full font-mono text-xs uppercase tracking-mono transition-colors"
           >
             <Mail className="w-4 h-4 text-dim" />
-            <span>admin@devinthehood.com</span>
+            <span>{siteConfig.email}</span>
           </a>
         </div>
       </div>
     </section>
   );
 }
-

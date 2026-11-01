@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "verify": "npm run verify:all && npm run verify:assets && npm run verify:sections",
     "verify:all": "node scripts/verify-all.js",
     "verify:assets": "node scripts/check-assets.js",
-    "verify:scroll": "node scripts/benchmark-scroll.js"
+    "verify:scroll": "node scripts/benchmark-scroll.js",
+    "verify:sections": "node scripts/verify_protected_sections.js"
   },
   "dependencies": {
     "lucide-react": "^0.475.0",
